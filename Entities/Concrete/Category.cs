@@ -8,7 +8,7 @@ namespace Entities.Concrete
     //Cıplak Class Kalmasın
     public class Category : IEntity
     {
-        public int CategorId { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
     }
 }

@@ -5,9 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    //Interface metodları default public tir
-    public interface IProductDal : IEntityRepositoy<Product>
+    public interface ICustomerDal : IEntityRepositoy<Customer>
     {
-       
     }
 }
