@@ -30,9 +30,11 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //Autofac, Ninjecti, CastleWindsor, StructureMap, LightInject, DryInject --> IoC Container
+            //AOP
+            //Postsharp
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>();
-            services.AddSingleton<IProductDal,EfProductDal>();
+            //services.AddSingleton<IProductService,ProductManager>();
+            //services.AddSingleton<IProductDal,EfProductDal>();
 
         }
 
