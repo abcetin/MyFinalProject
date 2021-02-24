@@ -8,7 +8,10 @@ namespace Business.Constans //Constant sabit demek projeye özel sabitleri buray
     {
         public static string ProductAdded = "Ürün Eklendi"; //Publicler PascalCase yazılır
         public static string ProductNameInvalid = "Ürün İsmi Geçersiz";
-        internal static string MaintenanceTime = "Sistem Bakıma Alındı";
-        internal static string ProductsListed = "Ürünler Listelendi";
+        public static string MaintenanceTime = "Sistem Bakıma Alındı";
+        public static string ProductsListed = "Ürünler Listelendi";
+        public static string ProductCountOfCategoryError = "Kategorideki ürün sayısını aştınız";
+        public static string ProductNameAlreadyResults = "Aynı isimde bir ürün bulunmaktadır";
+        public static string CategoryLimitExceded = "Kategori Limiti Aşıldı";
     }
 }
