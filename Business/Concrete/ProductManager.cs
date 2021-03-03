@@ -3,6 +3,7 @@ using Business.BussinessAspects.Autofac;
 using Business.CCS;
 using Business.Constans;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Cach;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Bussiness;
@@ -33,6 +34,7 @@ namespace Business.Concrete
 
         [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
            IResult result = BussinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId),
@@ -50,7 +52,7 @@ namespace Business.Concrete
 
 
         }
-
+        [CacheAspect] //key, value 
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 1)
@@ -69,6 +71,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id), Messages.ProductsListed);
         }
 
+        [CacheAspect]
         public IDataResult<Product> GetById(int productId)
         {
             if (DateTime.Now.Hour == 22)
@@ -98,6 +101,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
             var result = _productDal.GetAll(p => p.CategoryId == product.CategoryId).Count;
@@ -137,6 +141,10 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
-       
+
+        public IResult AddTransactionalTest(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

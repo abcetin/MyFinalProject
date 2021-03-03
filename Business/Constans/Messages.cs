@@ -15,11 +15,11 @@ namespace Business.Constans //Constant sabit demek projeye özel sabitleri buray
         public static string ProductNameAlreadyResults = "Aynı isimde bir ürün bulunmaktadır";
         public static string CategoryLimitExceded = "Kategori Limiti Aşıldı";
         public static string AuthorizationDenied = "Yetkiniz Bulunmamaktadır.";
-        internal static string UserRegistered;
-        internal static User UserNotFound;
-        internal static User PasswordError;
-        internal static string SuccessfulLogin;
-        internal static string UserAlreadyExists;
-        internal static string AccessTokenCreated;
+        public static string UserRegistered = "Kayıt İşlemi Başarılı";
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string PasswordError = "Parola Hatalı";
+        public static string SuccessfulLogin = "Giriş Başarılı";
+        public static string UserAlreadyExists = "Kullanıcı Zaten Var";
+        public static string AccessTokenCreated= "Erişim Jetonu Oluşturuldu";
     }
 }
