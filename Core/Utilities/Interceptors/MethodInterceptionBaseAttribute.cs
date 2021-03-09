@@ -8,7 +8,7 @@ namespace Core.Utilities.Interceptors
     {
         public int Priority { get; set; }//Öncelik
 
-        public virtual void Intercept(IInvocation invocation)
+        public virtual void Intercept(IInvocation invocation) 
         {
 
         }

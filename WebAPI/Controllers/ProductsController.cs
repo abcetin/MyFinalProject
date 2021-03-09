@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
     [ApiController] // soldaki işlemin adı Attribute -- bir classla ilgili bilgi verme imzalama yöntemidir
     public class ProductsController : ControllerBase
     {
-        //Loose coupled -- gevşek bağlılık -- bir bağımlılığı ama soyuta bağımlı
+        //Loosely coupled -- gevşek bağlılık -- bir bağımlılığı ama soyuta bağımlı
         //naming convention -- isimlendirme standartı
         //IoC Container -- Inversion of Control
         IProductService _productService;

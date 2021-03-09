@@ -21,5 +21,7 @@ namespace Business.Constans //Constant sabit demek projeye özel sabitleri buray
         public static string SuccessfulLogin = "Giriş Başarılı";
         public static string UserAlreadyExists = "Kullanıcı Zaten Var";
         public static string AccessTokenCreated= "Erişim Jetonu Oluşturuldu";
+
+        public static string ProductUpdated = "Ürün Güncellendi";
     }
 }
