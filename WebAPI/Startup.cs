@@ -46,6 +46,8 @@ namespace WebAPI
             // builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>();
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            services.AddCors(); //farklý ortamlardan veri isteði yaplýcaðý için ekledir
+
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -75,6 +77,10 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureCustomExceptionMiddleware();
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()); //nerden istek geleceðini belirtiyoruz
 
             app.UseHttpsRedirection();
 
